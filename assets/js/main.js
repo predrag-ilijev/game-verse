@@ -128,8 +128,8 @@ var ispis = "";
 
 for(let i = 0; i < nizVestSrc.length; i++){
   ispis += `
-      <div class="col-12 mt-4">
-        <div class="row no-gutters db2 overflow-hidden d-flex flex-md-row shadow-sm h-md-250 position-relative">
+      <div class="col-12 mt-4 testing2">
+        <div class="row no-gutters db2 d-flex flex-md-row overflow-hidden shadow-sm h-md-250 position-relative testing">
           <div class="col-auto d-md-block d-flex align-items-center dnone">
             <img width="200" height ="250" class="img-fluid m-3 border border-secondary" src="${nizVestSrc[i]}" alt="${nizVestAlt[i]}"/>
           </div>
@@ -145,28 +145,6 @@ for(let i = 0; i < nizVestSrc.length; i++){
   `;
 }
 document.querySelector("#vestiovde").innerHTML = ispis;
-
-//ispisivanje FAQ(cesto postavljana pitanja)
-// var nizPitanja = ["Sta bi trebalo raditi?", "Sta ne bi trebalo raditi?", "Pitanje broj 3?", "Pitanje broj 4?", "Pitanje broj 5?"];
-// var nizOdgovora = ["Odgovor broj 1", "Odgovor broj 2", "Odgovor broj 3", "Odgovor broj 4", "Odgovor broj 5"];
-// var nizHrefFaq = ["#faq1", "#faq2", "#faq3", "#faq4", "#faq5"];
-// var nizImeFaq = ["faq1", "faq2", "faq3", "faq4", "faq5"];
-
-// var ispis = "";
-
-// for(let i = 0; i < nizPitanja.length; i++){
-//   ispis += `
-//       <li>
-//         <a data-toggle="collapse" class="collapsed" href="${nizHrefFaq[i]}">${nizPitanja[i]}<i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
-//         <div id="${nizImeFaq[i]}" class="collapse" data-parent=".faq-list">
-//           <p>
-//             ${nizOdgovora[i]}
-//           </p>
-//         </div>
-//       </li>
-//   `;
-// }
-// document.querySelector("#faqlista").innerHTML = ispis;
 
 //Modal za autora
 var modal = document.getElementById("myModal");
@@ -219,6 +197,11 @@ $(document).ready(function(){
 
   slajder();
 
+  setTimeout(
+    function() 
+    {
+      //something
+    }, 5000);
 });
 
 //Slajder slike glavne vesti
@@ -232,19 +215,39 @@ function slajder() {
   setTimeout(slajder, 5000);
 }
 
-//Smena pozadine kod glavne slike na sajtu
-// $('#hero').hover(
-//   function(){
-//     $(this).css('background-image', 'url("assets/img/gamingdark.jpg")')
-//   },
-//   function(){
-//     $(this).css('background-image', 'url("assets/img/gaming.jpg")')
-//   }
-// )
+//Show more dugme prikaz i nestaje nakon prikazivanja svega
+$(function () {
+  var brKl = 0;
+  $(".testing2").slice(0, 1).show();
+  $(".testing").toggleClass("tests");
+  $("#loadMore").on('click', function (e) {
+      e.preventDefault();
+      $(".testing2:hidden").slice(0, 1).slideDown();
+      if ($(".testing2:hidden").length == 0) {
+          $("#load").fadeOut('slow');
+      }
+      brKl += 1;
+      // console.log(brKl);
+      if (brKl >= (nizVestSrc.length-1)) {
+        $(".loaded").remove();
+      }
+  });
+});
+
+// d-flex flex-md-row db2
+// $('.testing').addClass('db2 d-flex flex-md-row');
+
+// $('a[href=#top]').click(function () {
+//   $('body,html').animate({
+//       scrollTop: 0
+//   }, 600);
+//   return false;
+// });
+
 
   
   
-
+// $('.testing').addClass('importantRule');
 
 
 
