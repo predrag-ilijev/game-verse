@@ -68,12 +68,12 @@
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <!-- ======= Main News Section ======= -->
+    <section id="mainnews" class="mainnews">
       <div class="container">
 
         <div class="row">
-          <div class="col-lg-6 d-flex align-items-center" id="slike">
+          <div class="col-lg-6 d-flex align-items-center p-0" id="slike">
             <img src="assets/img/maingame.jpg" class="img-fluid prikazi" alt="maingame">
             <img src="assets/img/cyber.jpg" class="img-fluid" alt="maingame2">
             <img src="assets/img/maingame.jpg" class="img-fluid" alt="maingame3">
@@ -94,28 +94,44 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section><!-- End Main News Section -->
 
-    <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us section-bg">
+    <!-- ======= Upcoming games Section ======= -->
+    <section id="agames" class="agames section-bg">
       <div class="container">
         <div class="section-title">
           <h2>Most anticipated games this month</h2>
         </div>
         <div class="row" id="karticeovde"> </div>
       </div>
-    </section><!-- End Why Us Section -->
+    </section><!-- End Upcoming games Section -->
 
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="">
       <div class="container">
+        <div class="section-title">
+          <h2>Latest wallpapers gallery</h2>
+        </div>
         <div id="slikeovde"class="row">
         </div>
       </div>
     </section><!-- ======= End Gallery Section ======= -->
 
+    <!-- ======= News Section ======= -->
+    <section id="news" class="news section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Latest stories</h2>
+        </div>
+        <div class="row" id="vestiovde">
+
+        </div>
+
+      </div>
+    </section><!-- End News Section -->
+
     <!-- ======= Frequenty Asked Questions Section ======= -->
-    <section class="faq">
+    <!-- <section class="faq">
       <div class="container">
 
         <div class="section-title">
@@ -127,10 +143,10 @@
         </ul>
 
       </div>
-    </section><!-- End Frequenty Asked Questions Section -->
+    </section>End Frequenty Asked Questions Section -->
 
     <!-- ======= Contact Us Section ======= -->
-    <section id="contact" class="contact section-bg">
+    <section id="contact" class="contact">
       <div class="container">
 
         <div class="section-title">
@@ -164,7 +180,26 @@
               <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
 
+            <!-- <h2>Modal Example</h2> -->
+            <!-- Trigger/Open The Modal -->
+            <div class="d-flex justify-content-center justify-content-md-start">
+              <button id="myBtn" class="btn btn-outline-light btn-sm mt-4 mr-2 ml-2 ml-md-0"><a>Show Author</a></button>
+
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Some text in the Modal..</p>
+                </div>
+
+              </div>
+
+              <div class="btn btn-outline-light btn-sm mt-4"><a href="index.html">Documentation</a></div>
+            </div>
           </div>
+          
 
           <div class="col-lg-5 col-md-7">
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">

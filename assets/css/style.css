@@ -5,6 +5,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  background-color: rgb(0, 0, 0);
 }
 
 a {
@@ -347,52 +348,52 @@ section {
 }
 
 /*--------------------------------------------------------------
-# About
+# mainnews
 --------------------------------------------------------------*/
-.about h3 {
+.mainnews h3 {
   font-weight: 300;
   font-size: 26px;
 }
 
-.about ul {
+.mainnews ul {
   list-style: none;
   padding: 0;
 }
 
-.about ul li {
+.mainnews ul li {
   padding-bottom: 10px;
 }
 
-.about ul i {
+.mainnews ul i {
   font-size: 20px;
   padding-right: 4px;
   color: #fd680e;
 }
 
-.about p:last-child {
+.mainnews p:last-child {
   margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
-# Why Us
+# Most anticipated
 --------------------------------------------------------------*/
-.why-us {
+.agames {
   padding-bottom: 30px;
 }
 
-.why-us .card {
+.agames .card {
   border-radius: 3px;
   border: 0;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
 }
 
-.why-us .card-icon {
+.agames .card-icon {
   text-align: center;
   margin-top: -32px;
 }
 
-.why-us .card-icon i {
+.agames .card-icon i {
   font-size: 32px;
   color: #fff;
   width: 64px;
@@ -407,34 +408,34 @@ section {
   display: inline-block;
 }
 
-.why-us .card-body {
+.agames .card-body {
   padding-top: 12px;
 }
 
-.why-us .card-title {
+.agames .card-title {
   font-weight: 700;
   text-align: center;
 }
 
-.why-us .card-title a {
+.agames .card-title a {
   color: #743e1d;
 }
 
-.why-us .card-title a:hover {
+.agames .card-title a:hover {
   color: #fd680e;
 }
 
-.why-us .card-text {
+.agames .card-text {
   color: #5e5e5e;
 }
 
-.why-us .card:hover .card-icon i {
+.agames .card:hover .card-icon i {
   background: #fff;
   color: #fd680e;
 }
 
 @media (max-width: 1024px) {
-  .why-us {
+  .agames {
     background-attachment: scroll;
   }
 }
@@ -670,7 +671,7 @@ section {
 } 
 
 .nav-menu {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   -moz-backdrop-filter: blur(16px);
@@ -678,7 +679,7 @@ section {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.795);
 }
 .nav-toggle {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   -moz-backdrop-filter: blur(16px);
@@ -719,7 +720,7 @@ section {
   /* background: url("../img/pic03.jpg") center center;
   background-size: cover; */
 }
-#about .container {
+#mainnews .container {
   color: rgb(255, 255, 255);
   padding-top: 20px;
   padding-bottom: 20px;
@@ -729,11 +730,11 @@ section {
   border-left: 2px solid rgba(90, 7, 49, 0.575);
   border-right: 2px solid rgba(90, 7, 49, 0.575);
 }
-#about .container img {
+#mainnews .container img {
   border: 1px solid rgb(78, 78, 78);
 }
 
-#about .container p {
+#mainnews .container p {
   color: rgb(143, 143, 143);
 }
 
@@ -787,4 +788,98 @@ a:hover {
 }
 #slike .prikazi {
   display: inline !important;
+}
+
+.darkbg, .darkbg img{
+  background-color: rgb(10, 10, 10);
+  border-top: 2px dashed rgba(241, 20, 130, 0.575); 
+  /* border-bottom: 2px dashed rgba(241, 20, 130, 0.575); */
+  border-left: 2px solid rgba(90, 7, 49, 0.575);
+  border-right: 2px solid rgba(90, 7, 49, 0.575);
+}
+.darkbg .card-body {
+  border-bottom: 2px dashed rgba(241, 20, 130, 0.575); 
+  border-left: 2px solid rgba(90, 7, 49, 0.575);
+  border-right: 2px solid rgba(90, 7, 49, 0.575);
+}
+.db2, .modal-content{
+  border-bottom: 2px dashed rgba(241, 20, 130, 0.575);
+  border-top: 2px dashed rgba(241, 20, 130, 0.575); 
+  border-left: 2px solid rgba(90, 7, 49, 0.575);
+  border-right: 2px solid rgba(90, 7, 49, 0.575);
+  background-color: rgb(10, 10, 10);
+}
+.darkbg2 img{
+  border: 1px solid rgb(78, 78, 78);
+}
+
+.section-title h2::after {
+  height: 2px;
+  background: rgba(241, 20, 130, 0.575); ;
+}
+
+.agames .card-title a {
+  color: white !important;
+}
+
+.agames .card-title a:hover {
+  color: rgb(71, 71, 71) !important;
+}
+
+.agames .card-text, .news .card-text {
+  color: rgb(143, 143, 143);
+}
+
+@media (max-width: 768px) {
+  .dnone {
+    display: none !important; 
+  } 
+}
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  /* backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  -moz-backdrop-filter: blur(16px); */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: rgba(10, 10, 10, 0.521);
+  margin: auto;
+  padding: 20px;
+  /* border: 1px solid #888; */
+  width: 80%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
