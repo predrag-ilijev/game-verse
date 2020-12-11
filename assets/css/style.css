@@ -666,7 +666,7 @@ section {
 /* Moj deo CSS-a */
 
 #hero {
-  background: url("../img/gamingdark.jpg") center center;
+  background: url("../img/gaming3dark.png") center center;
   background-size: cover;
 } 
 
@@ -675,7 +675,7 @@ section {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   -moz-backdrop-filter: blur(16px);
-  border-left: 2px solid rgba(241, 20, 130, 0.575);
+  border-left: 2px solid rgba(241, 20, 75, 0.575);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.795);
 }
 .nav-toggle {
@@ -684,7 +684,7 @@ section {
   -webkit-backdrop-filter: blur(16px);
   -moz-backdrop-filter: blur(16px);
   padding: 12px 13px;
-  border: 2px solid rgba(241, 20, 130, 0.575);
+  border: 2px solid rgba(241, 20, 75, 0.575);
   border-radius: 50%;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.795);
 }
@@ -705,7 +705,7 @@ section {
   padding: 0;
   margin: -5px 0px;
   max-height: 55px;
-  border: 3px solid rgba(241, 20, 130, 0.575);
+  border: 3px solid rgba(241, 20, 75, 0.575);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.534);
   border-radius: 50%;
   background-color:rgba(255, 255, 255, 0.829);
@@ -725,8 +725,8 @@ section {
   padding-top: 20px;
   padding-bottom: 20px;
   background: rgb(0, 0, 0);
-  border-top: 2px dashed rgba(241, 20, 130, 0.575);
-  border-bottom: 2px dashed rgba(241, 20, 130, 0.575);
+  border-top: 2px dashed rgba(241, 20, 75, 0.575);
+  border-bottom: 2px dashed rgba(241, 20, 75, 0.575);
   border-left: 2px solid rgba(90, 7, 49, 0.575);
   border-right: 2px solid rgba(90, 7, 49, 0.575);
 }
@@ -739,15 +739,15 @@ section {
 }
 
 .font-italic {
-  color: rgba(241, 20, 130, 0.575) !important;
+  color: rgba(241, 20, 75, 0.575) !important;
 }
 
 a {
-  color: rgb(241, 20, 131) !important;
+  color: rgb(241, 20, 94) !important;
 }
 
 a:hover {
-  color: rgba(241, 20, 130, 0.575) !important;
+  color: rgba(241, 20, 75, 0.575) !important;
 }
 
 .logo-move {
@@ -773,7 +773,7 @@ a:hover {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.678);
 }
 #hero .php-email-form button[type="submit"]:hover {
-  background: rgba(241, 20, 130, 0.575);
+  background: rgba(241, 20, 75, 0.575);
 }
 
 .section-bg {
@@ -792,19 +792,18 @@ a:hover {
 
 .darkbg, .darkbg img{
   background-color: rgb(10, 10, 10);
-  border-top: 2px dashed rgba(241, 20, 130, 0.575); 
-  /* border-bottom: 2px dashed rgba(241, 20, 130, 0.575); */
+  border-top: 2px dashed rgba(241, 20, 75, 0.575); 
   border-left: 2px solid rgba(90, 7, 49, 0.575);
   border-right: 2px solid rgba(90, 7, 49, 0.575);
 }
 .darkbg .card-body {
-  border-bottom: 2px dashed rgba(241, 20, 130, 0.575); 
+  border-bottom: 2px dashed rgba(241, 20, 75, 0.575); 
   border-left: 2px solid rgba(90, 7, 49, 0.575);
   border-right: 2px solid rgba(90, 7, 49, 0.575);
 }
 .db2, .modal-content{
-  border-bottom: 2px dashed rgba(241, 20, 130, 0.575);
-  border-top: 2px dashed rgba(241, 20, 130, 0.575); 
+  border-bottom: 2px dashed rgba(241, 20, 75, 0.575);
+  border-top: 2px dashed rgba(241, 20, 75, 0.575); 
   border-left: 2px solid rgba(90, 7, 49, 0.575);
   border-right: 2px solid rgba(90, 7, 49, 0.575);
   background-color: rgb(10, 10, 10);
@@ -815,7 +814,7 @@ a:hover {
 
 .section-title h2::after {
   height: 2px;
-  background: rgba(241, 20, 130, 0.575); ;
+  background: rgba(241, 20, 75, 0.575);
 }
 
 .agames .card-title a {
@@ -826,7 +825,7 @@ a:hover {
   color: rgb(71, 71, 71) !important;
 }
 
-.agames .card-text, .news .card-text {
+.agames .card-text, .news .card-text, .contact .info, .modal-content p {
   color: rgb(143, 143, 143);
 }
 
@@ -836,6 +835,20 @@ a:hover {
   } 
 }
 
+.contact .info i {
+  color:  rgb(241, 20, 94);
+}
+
+.contact .social-links a {
+  background: rgba(90, 7, 49, 0.575);
+  color: #fff;
+}
+
+.contact .social-links a:hover {
+  background: #fff;
+  color: #fff;
+}
+
 
 
 
@@ -843,7 +856,7 @@ a:hover {
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 10; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -859,19 +872,24 @@ a:hover {
 
 /* Modal Content */
 .modal-content {
-  background-color: rgba(10, 10, 10, 0.521);
+  background-color: rgba(10, 10, 10, 0.678);
   margin: auto;
   padding: 20px;
   /* border: 1px solid #888; */
-  width: 80%;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
+  width: 85%;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  -moz-backdrop-filter: blur(12px);
+}
+.modal-content img {
+  width: 240px !important;
+  height: 246px !important;
+  border: 1px solid rgb(71, 71, 71);
 }
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
