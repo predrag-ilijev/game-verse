@@ -49,9 +49,14 @@
 
 
 
+
+
+
+
+
 /// Moj deo JS-a
 
-///Dinamicki ispis
+//Dinamicki ispis
 //ispis nav menija
 var nizNavHref = ["#mainnews", "#agames", "#news", "#gallery", "#contact"];
 var nizNavIme = ["Main news", "Upcoming games", "Latest stories","Wallpapers", "Contact Us"];
@@ -196,17 +201,16 @@ $(document).ready(function(){
   });
 
   slajder();
-
   
-  // setTimeout(
-  //   function() 
-  //   {
-  //     //something
-  //   }, 5000);
+  setTimeout(
+    function() 
+    {
+      //something
+    }, 5000);
 });
 
 //Slajder slike glavne vesti
-$(function slajder() {
+function slajder() {
   var current = $('#slike .prikazi');
   var next = current.next().length ? current.next() : current.parent().children(':first');
   
@@ -214,7 +218,7 @@ $(function slajder() {
   next.fadeIn(3000).addClass('prikazi');
   
   setTimeout(slajder, 5000);
-});
+}
 
 //Show more dugme prikaz i nestaje nakon prikazivanja svega
 $(function () {
@@ -233,19 +237,6 @@ $(function () {
       }
   });
 });
-
-// d-flex flex-md-row db2
-// $('.testing').addClass('db2 d-flex flex-md-row');
-
-// $('a[href=#top]').click(function () {
-//   $('body,html').animate({
-//       scrollTop: 0
-//   }, 600);
-//   return false;
-// });
-
-
-  
   
 // $('.testing').addClass('importantRule');
 
