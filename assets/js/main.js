@@ -129,8 +129,8 @@ var ispis = "";
 for(let i = 0; i < nizVestSrc.length; i++){
   ispis += `
       <div class="col-12 mt-4 testing2">
-        <div class="row no-gutters db2 d-flex flex-md-row overflow-hidden shadow-sm h-md-250 position-relative testing">
-          <div class="col-auto d-md-block d-flex align-items-center dnone">
+        <div class="row no-gutters db2 d-flex flex-sm-row overflow-hidden shadow-sm h-md-250 position-relative testing">
+          <div class="col-auto d-sm-block d-flex align-items-center pt-3 pb-3 dnone">
             <img width="200" height ="250" class="img-fluid m-3 border border-secondary" src="${nizVestSrc[i]}" alt="${nizVestAlt[i]}"/>
           </div>
           <div class="col p-4 d-flex flex-column position-static">
@@ -197,6 +197,7 @@ $(document).ready(function(){
 
   slajder();
 
+  
   // setTimeout(
   //   function() 
   //   {
@@ -219,7 +220,7 @@ $(function slajder() {
 $(function () {
   var brKl = 0;
   $(".testing2").slice(0, 1).show();
-  $(".testing").toggleClass("tests");
+  // $(".testing").toggleClass("tests");
   $("#loadMore").on('click', function (e) {
       e.preventDefault();
       $(".testing2:hidden").slice(0, 1).slideDown();

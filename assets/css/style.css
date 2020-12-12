@@ -810,8 +810,9 @@ a:hover {
   border-top: 2px dashed rgba(241, 20, 75, 0.575); 
   border-left: 2px solid rgba(90, 7, 49, 0.575);
   border-right: 2px solid rgba(90, 7, 49, 0.575);
-  background-color: rgb(10, 10, 10) !important;
+  background: rgb(0, 0, 0) !important;
 }
+
 .darkbg2 img{
   border: 1px solid rgb(78, 78, 78);
 }
@@ -869,13 +870,13 @@ a:hover {
 
 /* modal */
 .modal-content {
-  background-color: rgba(0, 0, 0, 0.623);
   margin: auto;
   padding: 20px;
   width: 85%;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   -moz-backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.425) !important;
 }
 .modal-content img {
   width: 240px !important;
@@ -900,6 +901,6 @@ a:hover {
 .testing2 {
   display: none;
 }
-.tests {
+/* .tests {
   display: block !important;
-}
+} */
