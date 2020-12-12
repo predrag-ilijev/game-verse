@@ -53,8 +53,8 @@
 
 ///Dinamicki ispis
 //ispis nav menija
-var nizNavHref = ["#mainnews", "#agames", "#gallery", "#contact"];
-var nizNavIme = ["Main news", "Upcoming games", "Wallpapers", "Contact Us"];
+var nizNavHref = ["#mainnews", "#agames", "#news", "#gallery", "#contact"];
+var nizNavIme = ["Main news", "Upcoming games", "Latest stories","Wallpapers", "Contact Us"];
 
 var ispis = `
         <li class="active"><a href="#header">Home</a></li>
@@ -68,7 +68,7 @@ for(let i = 0; i < nizNavHref.length; i++){
 document.querySelector("#meniLista").innerHTML = ispis;
 
 //ispis slika(galerija)
-var nizSrc = ["assets/img/wallp1.jpg", "assets/img/wallp2.jpg", "assets/img/wallp3.jpg", "assets/img/wallp4.jpg", "assets/img/wallp5.jpg", "assets/img/wallp6.jpg", "assets/img/wallp7.jpg", "assets/img/wallp8.jpg"];
+var nizSrc = ["assets/img/thumb/wallp1th.jpg", "assets/img/thumb/wallp2th.jpg", "assets/img/thumb/wallp3th.jpg", "assets/img/thumb/wallp4th.jpg", "assets/img/thumb/wallp5th.jpg", "assets/img/thumb/wallp6th.jpg", "assets/img/thumb/wallp7th.jpg", "assets/img/thumb/wallp8th.jpg"];
 var nizHref = ["assets/img/wallp1.jpg", "assets/img/wallp2.jpg", "assets/img/wallp3.jpg", "assets/img/wallp4.jpg", "assets/img/wallp5.jpg", "assets/img/wallp6.jpg", "assets/img/wallp7.jpg", "assets/img/wallp8.jpg"];
 var nizAlt = ["Wallpaper1", "Wallpaper2", "Wallpaper3", "Wallpaper4", "Wallpaper5", "Wallpaper6", "Wallpaper7", "Wallpaper8"];
 
@@ -197,15 +197,15 @@ $(document).ready(function(){
 
   slajder();
 
-  setTimeout(
-    function() 
-    {
-      //something
-    }, 5000);
+  // setTimeout(
+  //   function() 
+  //   {
+  //     //something
+  //   }, 5000);
 });
 
 //Slajder slike glavne vesti
-function slajder() {
+$(function slajder() {
   var current = $('#slike .prikazi');
   var next = current.next().length ? current.next() : current.parent().children(':first');
   
@@ -213,7 +213,7 @@ function slajder() {
   next.fadeIn(3000).addClass('prikazi');
   
   setTimeout(slajder, 5000);
-}
+});
 
 //Show more dugme prikaz i nestaje nakon prikazivanja svega
 $(function () {
@@ -227,7 +227,6 @@ $(function () {
           $("#load").fadeOut('slow');
       }
       brKl += 1;
-      // console.log(brKl);
       if (brKl >= (nizVestSrc.length-1)) {
         $(".loaded").remove();
       }
