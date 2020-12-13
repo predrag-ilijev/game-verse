@@ -123,7 +123,7 @@
 
         <div class="row justify-content-center">
 
-          <div class="col-lg-3 col-md-5 mb-5 mb-md-0">
+          <div class="col-lg-3 col-md-5 mb-5 mb-md-0 pt-5">
             <div class="info">
               <div class="address">
                 <i class="bx bx-map"></i>
@@ -178,90 +178,40 @@
             </div>
           </div>
 
-
-
-          
-
           <!-- Forma -->
           <div class="col-lg-5 col-md-7">
-            <form action="">
+            <form id="formOne" name= "input" action="#" method="get">
               <p id="confirmation"></p>
               <div class="form-group">
-                <!-- <label for="tbImePrezime">Ime i prezime</label> -->
+                <label class="gray" for="tbImePrezime">Name:</label>
                 <input type="text" id="tbImePrezime" placeholder="Your Name" class="form-control"/>
-                <span>Example: <i>Tom Smith, Edward Hemingway...</i></span>
+                <span id ="gr1"></span>
               </div>
               <div class="form-group">
-                <!-- <label for="tbEmail">Email</label> -->
+                <label class="gray" for="tbEmail">Email:</label>
                 <input type="text" id="tbEmail" placeholder="Your Email" class="form-control"/>
-                <span>Example: <i>tom@gmail.com, tom.smith@hotmail.com, etc...</i></span>
+                <span id ="gr2"></span>
               </div>
               <div class="form-group">
-                <textarea id="tbMessage" rows="5" placeholder="Message" class="form-control"></textarea>
-                <span>Enter at least 20 characters(including spaces). <i>Max: 150</i></span>
+                <label class="gray" for="tbMessage">Message:</label>
+                <textarea id="tbMessage" rows="5" placeholder="Write something..." class="form-control"></textarea>
+                <span id ="gr3"></span>
               </div>
-              <div class="form-group">
-                <input type="button" value="Send" id="btnPrijava" class="btn btn-primary"/>
+              <div class="form-group d-flex justify-content-center justify-content-md-start">
+                <input type="button" value="Send" id="buttonSubmit" class="btn btn-light"/>
               </div>
-              
             </form>
-            <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form> -->
           </div>
         </div>
       </div>
     </section><!-- End Contact Us Section -->
   </main><!-- End #main -->
 
-  <!-- <form action="#!" method="post">
-    <div class="form-group">
-      <label for="tbName" class="font-small">Full name</label> 
-      <input type="text" class="fontsmall" id="tbName" placeholder="Your full name" autocomplete="off"/>
-      <span class="errorMessage font-small"> <ul id="nameErrorList"> </ul> </span> 
-    </div> 
-    <div class="form-group">
-      <label for="tbEmail" class="fontsmall">Email address</label>
-      <input type="email" class="fontsmall" id="tbEmail" placeholder="Your email" autocomplete="off"/>
-      <span class="errorMessage fontsmall">examplename@example.com</span> 
-    </div> 
-    <div class="form-group">
-      <label for="tbMessage" class="font-small">Message</label>
-      <textarea class="fontsmall" id="tbMessage" placeholder="Your message" rows="10"></textarea>
-      <span class="errorMessage fontsmall">Your message (without spacing characters) cannot be shorter than 20 characters.</span>
-    </div>
-    <input type="button" id="btnSubmitForm" name="btnSubmitForm" v alue="Submit" class="font-small uppercase"/>
-  </form> -->
-
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <!-- <div class="copyright">
-        &copy; Copyright <strong><span>Predrag Ilijev - 2020</span></strong>
-      </div> -->
       <div class="copyright">
-        &copy; Copyright - <a href="#">Predrag Ilijev - 196/19</a>
+        <span class="gray">&copy; Copyright 2020 - </span><i>Predrag Ilijev 196/19</i>
       </div>
     </div>
   </footer><!-- End #footer -->

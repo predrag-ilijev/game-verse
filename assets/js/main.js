@@ -47,17 +47,9 @@
 
 })(jQuery);
 
-
-
-
-
-
-
-
 /// Moj deo JS-a
 
-//Dinamicki ispis
-//ispis nav menija
+//Nav meni
 var nizNavHref = ["#mainnews", "#agames", "#news", "#gallery", "#contact"];
 var nizNavIme = ["Main news", "Upcoming games", "Latest stories","Wallpapers", "Contact Us"];
 
@@ -72,7 +64,7 @@ for(let i = 0; i < nizNavHref.length; i++){
 }
 document.querySelector("#meniLista").innerHTML = ispis;
 
-//ispis slika(galerija)
+//Galerija
 var nizSrc = ["assets/img/thumb/wallp1th.jpg", "assets/img/thumb/wallp2th.jpg", "assets/img/thumb/wallp3th.jpg", "assets/img/thumb/wallp4th.jpg", "assets/img/thumb/wallp5th.jpg", "assets/img/thumb/wallp6th.jpg", "assets/img/thumb/wallp7th.jpg", "assets/img/thumb/wallp8th.jpg"];
 var nizHref = ["assets/img/wallp1.jpg", "assets/img/wallp2.jpg", "assets/img/wallp3.jpg", "assets/img/wallp4.jpg", "assets/img/wallp5.jpg", "assets/img/wallp6.jpg", "assets/img/wallp7.jpg", "assets/img/wallp8.jpg"];
 var nizAlt = ["Wallpaper1", "Wallpaper2", "Wallpaper3", "Wallpaper4", "Wallpaper5", "Wallpaper6", "Wallpaper7", "Wallpaper8"];
@@ -92,7 +84,7 @@ for(let i = 0; i < nizSrc.length; i++){
 }
 document.querySelector("#slikeovde").innerHTML = ispis;
 
-//ispisivanje kartica
+//Kartice
 var nizIconSrc = ["assets/img/rev8.jpg", "assets/img/hinf.jpg", "assets/img/hman3.jpg"];
 var nizIconAlt = ["Icon1", "Icon2", "Icon3"];
 
@@ -118,16 +110,18 @@ for(let i = 0; i < nizIconSrc.length; i++){
 }
 document.querySelector("#karticeovde").innerHTML = ispis;
 
-//ispisivanje novosti
-var nizVestSrc = ["assets/img/thumbvest1.jpg", "assets/img/thumbvest2.jpg", "assets/img/thumbvest3.jpg"];
-var nizVestAlt = ["Vest1", "Vest2", "Vest3"];
+//Novosti
+var nizVestSrc = ["assets/img/thumbvest1.jpg", "assets/img/thumbvest2.jpg", "assets/img/thumbvest3.jpg", "assets/img/thumbvest4.jpg"];
+var nizVestAlt = ["Vest1", "Vest2", "Vest3", "Vest4"];
 
 var vestTekst = ["The Game Awards took place earlier today, and it spent several hours delivering not only awards, but also a host of new game announcements and updates on existing games.",
 "Super Meat Boy Forever has been a long time coming, having been first announced in 2014. Now the tough-as-nails platformer has finally set a release date.",
-"Epic already gives away free games every week, but starting next Thursday, you'll be able to snag a freebie every day, to celebrate the holidays."];
+"Epic already gives away free games every week, but starting next Thursday, you'll be able to snag a freebie every day, to celebrate the holidays.",
+"Given these circumstances, it's easy to see why Animal Crossing became such an immediate, inescapable hit, particularly during the first half of the year."];
 var vestNaslov = ["The Game Awards 2020 Announcements: All The Biggest News",
- "Super Meat Boy Forever Gets Release Date, After Wait Seemed Like Forever",
-  "Epic Is Giving Away 15 Free Games For Christmas Starting Next week"];
+"Super Meat Boy Forever Gets Release Date, After Wait Seemed Like Forever",
+"Epic Is Giving Away 15 Free Games For Christmas Starting Next week",
+"Best Games Of 2020 – Animal Crossing: New Horizons"];
 
 var ispis = "";
 
@@ -151,7 +145,7 @@ for(let i = 0; i < nizVestSrc.length; i++){
 }
 document.querySelector("#vestiovde").innerHTML = ispis;
 
-//Modal za autora
+//Modal autor
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
@@ -171,22 +165,6 @@ window.onclick = function(event) {
 }
 
 
-//Provera reg. izrazima formu 1
-// function Email(){
-//   var email = document.getElementById("emailAdd").value
- 
-//   var checking = /^\S+@\S+\.\S+$/
-//   if(checking.test(email)){
-//   $(this).animate({backgroundColor:"#fbf7f7",borderColor:"#99cc33"},330)
-//   }
-//   else{
-//   $(this).animate({backgroundColor:"#b33a3a",borderColor:"#b33a3a"},300)
-//   }
-//  }
-
-
-
-
 
 ///Moj jQuery
 
@@ -198,13 +176,10 @@ $(document).ready(function(){
     $(this).hide();
     $(this).next().slideToggle();
   });
+
   slajder();
 
-
-
-
-  
-  // IV primer - obrada forme
+  // Forma
   $("#tbImePrezime").blur(function(){
     var reImePrezime = /^[A-Z][a-z]{2,19}(\s[A-Z][a-z]{2,19})+$/;
     proveraRegEx(reImePrezime, "#tbImePrezime");
@@ -216,84 +191,73 @@ $(document).ready(function(){
   })
 
   $("#tbMessage").blur(function(){
-    var reMessage = /^[\w\d]{20,150}$/;
+    var reMessage = /^[\w]+$/;
     proveraRegEx(reMessage, "#tbMessage");
   })
 
   function proveraRegEx(regEx, element){
-    if(!$(element).val().match(regEx)){
-        $(element).addClass("greska");
+    if ((element) == "#tbMessage") {
+      var messageText = $("#tbMessage").val();
+      var messageText2 = messageText.replace(/[\s]/mg, "");
+      var messageText3 = messageText2.length;
+      // console.log(messageText3);
+      if ((messageText3 < 20) || (messageText3 > 200)) {
+        $(element).addClass("wrong");
+        $("#gr3").html("Enter at least 20 characters. <i>Max: 200.</i>");
+        return false;
+      } else {
+        $(element).removeClass("wrong");
+        // $(element).addClass("correct");
+        return true;
+      }
+    }
+    if((!$(element).val().match(regEx))){
+        $(element).addClass("wrong");
+        if ((element) == "#tbImePrezime") {
+          $("#gr1").html("Example: <i>Tom Smith, Edward Hemingway...</i>");
+        }
+        if ((element) == "#tbEmail") {
+          $("#gr2").html("Example: <i>tom@gmail.com, tom.smith@hotmail.com, etc...</i>");
+        }
         return false;
     }
     else{
-        $(element).removeClass("greska");
-        $(element).addClass("ok");
+        $(element).removeClass("wrong");
+        // $(element).addClass("correct");
         return true;
     }
   }
 
-  // Message RegExp
-
-  // var tbMessage = document.querySelector("#tbMessage");
-  // tbMessage.addEventListener("blur", checkMessage);
-
-  // function checkMessage() {
-  //   var numberOfSpaces = tbMessage.value.replace(/[^\s]/mg, "").length;
-
-  //   if(tbMessage.value.length - numberOfSpaces < 20) {
-  //     noErrors = false;
-  //     tbMessage.classList.add("borderRed");
-  //     tbMessage.classList.remove("borderBlue");
-  //     tbMessage.nextElementSibling.style.display = "block";
-  //   } else {
-  //     tbMessage.classList.add("borderBlue");
-  //     tbMessage.classList.remove("borderRed");
-  //     tbMessage.nextElementSibling.style.display = "none";
-  //   }
-  // }
-
-
-  $("#btnPrijava").click(provera);
+  //Forma submit
+  $("#buttonSubmit").click(provera);
   function provera(){
-    var poljeImePrezime = $("#tbImePrezime");
+    var nameField = $("#tbImePrezime");
     var emailField = $("#tbEmail");
     var messageField = $("#tbMessage");
-
-    var reImePrezime = /^[A-Z][a-z]{2,15}(\s[A-Z][a-z]{2,15})+$/;
-    // var reEmail = /^[\w\.\-]+\@([a-z0-9]+\.)+[a-z]{2,3}$/;
+    
+    var namePattern = /^[A-Z][a-z]{2,15}(\s[A-Z][a-z]{2,15})+$/;
     var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    // var messagePattern = /^[\w\d]{20,150}$/;  /[^A-Za-z0-9 .'?!,@$#-_\n\r]/    /[a-z]*/g    value.match(/\S+/g).length;
-    var messagePattern = /^[\w\d]{20,150}$/;
+    var messagePattern = /^[\w]+$/;
 
-    var brojGresaka = 0;
-
-    // console.log(brojGresaka)
-    if(!proveraRegEx(reImePrezime, poljeImePrezime)){
-        brojGresaka++;
+    var mistakes = 0;
+    if(!proveraRegEx(namePattern, nameField)){
+      mistakes++;
     }
-    // console.log(brojGresaka)
 
     if(!proveraRegEx(emailPattern, emailField)){
-        brojGresaka++;
+      mistakes++;
     }
-    console.log(brojGresaka)
     if(!proveraRegEx(messagePattern, messageField)){
-      brojGresaka++;
+      mistakes++;
     }
-    console.log(brojGresaka)
-
-    if(brojGresaka == 0){
+    if(mistakes == 0){
         $("#confirmation").html("<p class='alert alert-success'>You have successfully completed the form!</p>");
-        $("#tbImePrezime").addClass("ok2");
-        $("#tbEmail").addClass("ok2");
-        $("#tbMessage").addClass("ok2");
+        $("#tbImePrezime").addClass("success").val("");
+        $("#tbEmail").addClass("success").val("");
+        $("#tbMessage").addClass("success").val("");
     }
   }
 });
-
-
-
-
 
 //Slajder slike glavne vesti
 function slajder() {
@@ -306,28 +270,31 @@ function slajder() {
   setTimeout(slajder, 5000);
 }
 
-//Show more dugme prikaz i nestaje nakon prikazivanja svega
+//Show more dugme za vesti(Nestaje nakon sto se pojave sve vesti)
 $(function () {
   var brKl = 0;
-  $(".testing2").slice(0, 1).show();
+  $(".testing2").slice(0, 2).show();
   $("#loadMore").on('click', function (e) {
       e.preventDefault();
       $(".testing2:hidden").slice(0, 1).slideDown();
       if ($(".testing2:hidden").length == 0) {
           $("#load").fadeOut('slow');
       }
-      brKl += 1;
+      brKl += 2;
       if (brKl >= (nizVestSrc.length-1)) {
         $(".loaded").remove();
       }
   });
 });
 
-
-
-
-
-
+///JQuery Plugin Lightbox
+$(function() {
+  $('#gallery a').lightbox({
+    blur: true,
+    nav:false,
+    // minSize: 768
+  }); 
+});
 
 
 
@@ -345,189 +312,3 @@ $(function () {
 // setTimeout( function() {
 //  //something
 // }, 5000);
-
-
-
-
-
-
-
-
-
-
-// // Name errors
-// var nameErrorsArray = ["A name cannot have less than 3 characters", "Has to be at least 2 words", "Each word has to be capitalized"];
-
-// for(i in nameErrorsArray) {
-//   var nameErrorList = document.querySelector("#nameErrorList");
-
-//   var liTag = document.createElement("li");
-//   var liText = document.createTextNode(`- ${nameErrorsArray[i]}`);
-//   liTag.appendChild(liText);
-
-//   nameErrorList.appendChild(liTag);
-// }
-
-// // RegExp
-
-// var noErrors;
-
-// // Name RegExp
-
-// var nameRegExp = /^[A-ZŠĐČĆŽ][a-zšđčćž]{2,}(\s[A-ZŠĐČĆŽ][a-zšđčćž]{2,})+$/;
-
-// var tbName = document.querySelector("#tbName");
-// tbName.addEventListener("blur", checkName);
-
-// function checkName() {
-//   var check = nameRegExp.test(tbName.value);
-//   if(check) {
-//     tbName.classList.add("borderBlue");
-//     tbName.classList.remove("borderRed");
-//     tbName.nextElementSibling.style.display = "none";
-//   } else {
-//     noErrors = false;
-//     tbName.classList.add("borderRed");
-//     tbName.classList.remove("borderBlue");
-//     tbName.nextElementSibling.style.display = "block";
-//   }
-// }
-
-// // Email RegExp
-
-// var emailRegExp = /^[\w-_\.]+@([\w-_]{2,}\.)+[a-z]{2,}$/i;
-
-// var tbEmail = document.querySelector("#tbEmail");
-// tbEmail.addEventListener("blur", checkEmail);
-
-// function checkEmail() {
-//   var check = emailRegExp.test(tbEmail.value);
-//   if(check) {
-//     tbEmail.classList.add("borderBlue");
-//     tbEmail.classList.remove("borderRed");
-//     tbEmail.nextElementSibling.style.display = "none";
-//   } else {
-//     noErrors = false;
-//     tbEmail.classList.add("borderRed");
-//     tbEmail.classList.remove("borderBlue");
-//     tbEmail.nextElementSibling.style.display = "block";
-//   }
-// }
-
-// // Message RegExp
-
-// var tbMessage = document.querySelector("#tbMessage");
-// tbMessage.addEventListener("blur", checkMessage);
-
-// function checkMessage() {
-//   var numberOfSpaces = tbMessage.value.replace(/[^\s]/mg, "").length;
-
-//   if(tbMessage.value.length - numberOfSpaces < 20) {
-//     noErrors = false;
-//     tbMessage.classList.add("borderRed");
-//     tbMessage.classList.remove("borderBlue");
-//     tbMessage.nextElementSibling.style.display = "block";
-//   } else {
-//     tbMessage.classList.add("borderBlue");
-//     tbMessage.classList.remove("borderRed");
-//     tbMessage.nextElementSibling.style.display = "none";
-//   }
-// }
-
-// // Submit button
-
-// var btnSubmitMessage = document.querySelector("#btnSubmitForm");
-
-// btnSubmitMessage.addEventListener("click", function() {
-//   noErrors = true;
-
-//   checkName();
-//   checkEmail();
-//   checkMessage();
-
-//   if(noErrors) {
-//     tbName.value = "";
-//     tbName.classList.remove("borderBlue");
-//     tbEmail.value = "";
-//     tbEmail.classList.remove("borderBlue");
-//     tbMessage.value = "";
-//     tbMessage.classList.remove("borderBlue");
-//     var successMessage = "Your message was sent successfully!";
-//     openSuccessModal(successMessage);
-//   }
-// });
-
-
-
-
-
-
-
-///JQuery Plugin Lightbox
-$(function() {
-  $('#gallery a').lightbox({
-    blur: true,
-    nav:false,
-    // minSize: 768
-  }); 
-});
-
-// $('.testing').addClass('importantRule');
-
-
-
-
-
-
-
-// var successModal = document.createElement("div");
-// successModal.setAttribute("id", "successModal");
-
-// var successCover = document.createElement("div");
-// successCover.setAttribute("class", "cover");
-
-// var successContainer = document.createElement("div");
-// successContainer.setAttribute("id", "successContainer");
-
-// var successMessageSpan = document.createElement("span");
-// successContainer.appendChild(successMessageSpan);
-
-// var btnClose = document.createElement("button");
-// btnClose.classList.add("font-medium", "btnClose");
-// btnClose.innerHTML = "X";
-// btnClose.addEventListener("click", closeSuccessModal);
-// successContainer.appendChild(btnClose);
-
-// successModal.appendChild(successCover);
-// successModal.appendChild(successContainer);
-
-// bodyTag.appendChild(successModal);
-
-// var closeModalTimeout;
-
-// function openSuccessModal(message) {
-//   successMessageSpan.innerHTML = message;
-//   successModal.style.display = "block";
-//   successContainer.style.display = "block";
-//   var timeoutValue = 0;
-//   for(let i = -100; i <= 0; i++) {
-//     setTimeout(function() {
-//       successCover.style.opacity = `${i+100}%`;
-//     }, timeoutValue+=1.5);
-//   }
-//   closeModalTimeout = setTimeout(closeSuccessModal, 3000);
-// }
-
-// successCover.addEventListener("click", closeSuccessModal);
-
-// function closeSuccessModal() {
-//   successContainer.style.display = "none";
-//   var timeoutValue = 0;
-//   for(let i = 0; i >= -100; i--) {
-//     setTimeout(function() {
-//       successCover.style.opacity = `${i+100}%`;
-//       if(i == -100) successModal.style.display = "none";
-//     }, timeoutValue+=1.5);
-//   }
-//   clearTimeout(closeModalTimeout);
-// }
