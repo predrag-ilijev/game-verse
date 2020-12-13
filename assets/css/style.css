@@ -186,7 +186,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 
 #hero h2 {
   color: #333;
-  margin-bottom: 20px;
+  margin-top: 20px;
   font-size: 24px;
 }
 
@@ -666,7 +666,7 @@ section {
 /* Moj deo CSS-a */
 
 #hero {
-  background: url("../img/gaming3dark2.jpg") center center;
+  background: url("../img/gaming3dark3.jpg") center center;
   background-size: cover;
 } 
 
@@ -760,25 +760,32 @@ a:hover {
 
 .hero-container h1, h2 {
   color: rgb(255, 255, 255) !important;
-  text-shadow: 0px 0px 8px #000000;
+  text-shadow: 0px 0px 6px #000000;
+}
+.hero-container h1 {
+  border-bottom: 2px dashed rgba(241, 20, 75, 0.795); 
 }
 .hero-container h2 {
-  color: rgba(255, 255, 255, 0.685) !important;
+  color: rgba(255, 255, 255, 0.829) !important;
 }
 
-#hero .php-email-form button[type="submit"] {
-  font-family: "Raleway", sans-serif;
-  color: #fff;
-  text-shadow: 0px 0px 8px #000000;
-  background: rgba(241, 20, 130, 0.205);
+#btnPrijava, #tbImePrezime, #tbEmail {
+  color: rgb(255, 255, 255) !important;
+  text-shadow: 0px 0px 8px #000000 !important;
+  background: rgba(241, 20, 130, 0.205) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   -moz-backdrop-filter: blur(16px);
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.678);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.678) !important;
+  font-family: "Raleway", sans-serif !important;
 }
-#hero .php-email-form button[type="submit"]:hover {
-  background: rgba(241, 20, 75, 0.575);
+#btnPrijava:hover {
+  background: rgba(241, 20, 75, 0.575) !important;
 }
+#tbImePrezime:focus, #tbEmail:focus {
+  color: rgb(255, 255, 255);
+}
+
 
 .section-bg {
   background-color: #181818;
@@ -819,7 +826,7 @@ a:hover {
 
 .section-title h2::after {
   height: 2px;
-  background: rgb(241, 20, 94);
+  background: rgba(241, 20, 75, 0.795); 
 }
 
 .agames .card-title a {
@@ -832,6 +839,10 @@ a:hover {
 
 .agames .card-text, .news .card-text, .contact .info, .modal-content p {
   color: rgb(143, 143, 143);
+}
+
+.gray{
+  color: rgb(143, 143, 143) !important;
 }
 
 @media (max-width: 768px) {
@@ -867,8 +878,6 @@ a:hover {
   background-color: rgb(0,0,0);
   background-color: rgba(0, 0, 0, 0.637);
 }
-
-/* modal */
 .modal-content {
   margin: auto;
   padding: 20px;
@@ -901,6 +910,14 @@ a:hover {
 .testing2 {
   display: none;
 }
-/* .tests {
-  display: block !important;
-} */
+
+.greska{
+  border: 2px solid rgb(255,0,0);
+  background: rgba(255,0,0, 0.3);
+}
+.ok{
+  border: none;
+}
+.ok2{
+  border: 2px solid rgb(22, 228, 56);
+}

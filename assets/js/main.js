@@ -62,12 +62,12 @@ var nizNavHref = ["#mainnews", "#agames", "#news", "#gallery", "#contact"];
 var nizNavIme = ["Main news", "Upcoming games", "Latest stories","Wallpapers", "Contact Us"];
 
 var ispis = `
-        <li class="active"><a href="#header">Home</a></li>
+  <li class="active"><a href="#header">Home</a></li>
 `;
 
 for(let i = 0; i < nizNavHref.length; i++){
   ispis += `
-      <li><a href="${nizNavHref[i]}">${nizNavIme[i]}</a></li>
+    <li><a href="${nizNavHref[i]}">${nizNavIme[i]}</a></li>
   `;
 }
 document.querySelector("#meniLista").innerHTML = ispis;
@@ -82,13 +82,13 @@ var nizCapt = ["Image 1", "Image 2", "Image 3", "Image 4", "Image 5", "Image 6",
 var ispis = "";
 
 for(let i = 0; i < nizSrc.length; i++){
-    ispis += `
-        <div class="col-lg-4 col-md-6 col-12 darkbg2">
-          <a href="${nizHref[i]}" data-caption="${nizCapt[i]}" class="d-block mb-4 h-100">
-            <img src="${nizSrc[i]}" class="img-fluid" alt="${nizAlt[i]}">
-          </a>
-        </div>
-    `;
+  ispis += `
+    <div class="col-lg-4 col-md-6 col-12 darkbg2">
+      <a href="${nizHref[i]}" data-caption="${nizCapt[i]}" class="d-block mb-4 h-100">
+        <img src="${nizSrc[i]}" class="img-fluid" alt="${nizAlt[i]}">
+      </a>
+    </div>
+  `;
 }
 document.querySelector("#slikeovde").innerHTML = ispis;
 
@@ -105,15 +105,15 @@ var ispis = "";
 
 for(let i = 0; i < nizIconSrc.length; i++){
   ispis += `
-      <div class="col-lg-4 col-md-12 d-flex align-items-stretch">
-        <div class="card darkbg">
-          <img src="${nizIconSrc[i]}" class="card-img-top" alt="${nizIconAlt[i]}">
-          <div class="card-body">
-            <h5 class="card-title"><a href="">${clanakNaslov[i]}</a></h5>
-            <p class="card-text"> ${clanakTekst[i]} </p>
-          </div>
+    <div class="col-lg-4 col-md-12 d-flex align-items-stretch">
+      <div class="card darkbg">
+        <img src="${nizIconSrc[i]}" class="card-img-top" alt="${nizIconAlt[i]}">
+        <div class="card-body">
+          <h5 class="card-title"><a href="">${clanakNaslov[i]}</a></h5>
+          <p class="card-text"> ${clanakTekst[i]} </p>
         </div>
       </div>
+    </div>
   `;
 }
 document.querySelector("#karticeovde").innerHTML = ispis;
@@ -133,20 +133,20 @@ var ispis = "";
 
 for(let i = 0; i < nizVestSrc.length; i++){
   ispis += `
-      <div class="col-12 mt-4 testing2">
-        <div class="row no-gutters db2 d-flex flex-sm-row overflow-hidden shadow-sm h-md-250 position-relative testing">
-          <div class="col-auto d-sm-block d-flex align-items-center pt-3 pb-3 dnone">
-            <img width="200" height ="250" class="img-fluid m-3 border border-secondary" src="${nizVestSrc[i]}" alt="${nizVestAlt[i]}"/>
-          </div>
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-warning">Article</strong>
-            <h4 class="mb-0 text-light">${vestNaslov[i]}</h4>
-            <div class="mb-1 text-muted">Gameverse</div>
-            <p class="card-text mb-auto">${vestTekst[i]}</p>
-            <a href="#" class="stretched-link">Continue reading</a>
-          </div>
+    <div class="col-12 mt-4 testing2">
+      <div class="row no-gutters db2 d-flex flex-sm-row overflow-hidden shadow-sm h-md-250 position-relative testing">
+        <div class="col-auto d-sm-block d-flex align-items-center pt-3 pb-3 dnone">
+          <img width="200" height ="250" class="img-fluid m-3 border border-secondary" src="${nizVestSrc[i]}" alt="${nizVestAlt[i]}"/>
+        </div>
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-warning">Article</strong>
+          <h4 class="mb-0 text-light">${vestNaslov[i]}</h4>
+          <div class="mb-1 text-muted">Gameverse</div>
+          <p class="card-text mb-auto">${vestTekst[i]}</p>
+          <a href="#" class="stretched-link">Continue reading</a>
         </div>
       </div>
+    </div>
   `;
 }
 document.querySelector("#vestiovde").innerHTML = ispis;
@@ -170,6 +170,7 @@ window.onclick = function(event) {
   }
 }
 
+
 //Provera reg. izrazima formu 1
 // function Email(){
 //   var email = document.getElementById("emailAdd").value
@@ -182,8 +183,6 @@ window.onclick = function(event) {
 //   $(this).animate({backgroundColor:"#b33a3a",borderColor:"#b33a3a"},300)
 //   }
 //  }
- 
-
 
 
 
@@ -199,15 +198,102 @@ $(document).ready(function(){
     $(this).hide();
     $(this).next().slideToggle();
   });
-
   slajder();
+
+
+
+
   
-  setTimeout(
-    function() 
-    {
-      //something
-    }, 5000);
+  // IV primer - obrada forme
+  $("#tbImePrezime").blur(function(){
+    var reImePrezime = /^[A-Z][a-z]{2,19}(\s[A-Z][a-z]{2,19})+$/;
+    proveraRegEx(reImePrezime, "#tbImePrezime");
+  })
+
+  $("#tbEmail").blur(function(){
+    var reEmail = /^[\w\.\-]+\@([a-z0-9]+\.)+[a-z]{2,3}$/;
+    proveraRegEx(reEmail, "#tbEmail");
+  })
+
+  $("#tbMessage").blur(function(){
+    var reMessage = /^[\w\d]{20,150}$/;
+    proveraRegEx(reMessage, "#tbMessage");
+  })
+
+  function proveraRegEx(regEx, element){
+    if(!$(element).val().match(regEx)){
+        $(element).addClass("greska");
+        return false;
+    }
+    else{
+        $(element).removeClass("greska");
+        $(element).addClass("ok");
+        return true;
+    }
+  }
+
+  // Message RegExp
+
+  // var tbMessage = document.querySelector("#tbMessage");
+  // tbMessage.addEventListener("blur", checkMessage);
+
+  // function checkMessage() {
+  //   var numberOfSpaces = tbMessage.value.replace(/[^\s]/mg, "").length;
+
+  //   if(tbMessage.value.length - numberOfSpaces < 20) {
+  //     noErrors = false;
+  //     tbMessage.classList.add("borderRed");
+  //     tbMessage.classList.remove("borderBlue");
+  //     tbMessage.nextElementSibling.style.display = "block";
+  //   } else {
+  //     tbMessage.classList.add("borderBlue");
+  //     tbMessage.classList.remove("borderRed");
+  //     tbMessage.nextElementSibling.style.display = "none";
+  //   }
+  // }
+
+
+  $("#btnPrijava").click(provera);
+  function provera(){
+    var poljeImePrezime = $("#tbImePrezime");
+    var emailField = $("#tbEmail");
+    var messageField = $("#tbMessage");
+
+    var reImePrezime = /^[A-Z][a-z]{2,15}(\s[A-Z][a-z]{2,15})+$/;
+    // var reEmail = /^[\w\.\-]+\@([a-z0-9]+\.)+[a-z]{2,3}$/;
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    // var messagePattern = /^[\w\d]{20,150}$/;  /[^A-Za-z0-9 .'?!,@$#-_\n\r]/    /[a-z]*/g    value.match(/\S+/g).length;
+    var messagePattern = /^[\w\d]{20,150}$/;
+
+    var brojGresaka = 0;
+
+    // console.log(brojGresaka)
+    if(!proveraRegEx(reImePrezime, poljeImePrezime)){
+        brojGresaka++;
+    }
+    // console.log(brojGresaka)
+
+    if(!proveraRegEx(emailPattern, emailField)){
+        brojGresaka++;
+    }
+    console.log(brojGresaka)
+    if(!proveraRegEx(messagePattern, messageField)){
+      brojGresaka++;
+    }
+    console.log(brojGresaka)
+
+    if(brojGresaka == 0){
+        $("#confirmation").html("<p class='alert alert-success'>You have successfully completed the form!</p>");
+        $("#tbImePrezime").addClass("ok2");
+        $("#tbEmail").addClass("ok2");
+        $("#tbMessage").addClass("ok2");
+    }
+  }
 });
+
+
+
+
 
 //Slajder slike glavne vesti
 function slajder() {
@@ -224,7 +310,6 @@ function slajder() {
 $(function () {
   var brKl = 0;
   $(".testing2").slice(0, 1).show();
-  // $(".testing").toggleClass("tests");
   $("#loadMore").on('click', function (e) {
       e.preventDefault();
       $(".testing2:hidden").slice(0, 1).slideDown();
@@ -237,8 +322,143 @@ $(function () {
       }
   });
 });
-  
-// $('.testing').addClass('importantRule');
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $('#introImage1').hover( function(){
+//   $(this).attr('src', 'assets/images/img_5.jpg')},
+//   function(){
+//     $(this).attr('src', 'assets/images/img_6.jpg')
+//   }
+// )
+
+// setTimeout( function() {
+//  //something
+// }, 5000);
+
+
+
+
+
+
+
+
+
+
+// // Name errors
+// var nameErrorsArray = ["A name cannot have less than 3 characters", "Has to be at least 2 words", "Each word has to be capitalized"];
+
+// for(i in nameErrorsArray) {
+//   var nameErrorList = document.querySelector("#nameErrorList");
+
+//   var liTag = document.createElement("li");
+//   var liText = document.createTextNode(`- ${nameErrorsArray[i]}`);
+//   liTag.appendChild(liText);
+
+//   nameErrorList.appendChild(liTag);
+// }
+
+// // RegExp
+
+// var noErrors;
+
+// // Name RegExp
+
+// var nameRegExp = /^[A-ZŠĐČĆŽ][a-zšđčćž]{2,}(\s[A-ZŠĐČĆŽ][a-zšđčćž]{2,})+$/;
+
+// var tbName = document.querySelector("#tbName");
+// tbName.addEventListener("blur", checkName);
+
+// function checkName() {
+//   var check = nameRegExp.test(tbName.value);
+//   if(check) {
+//     tbName.classList.add("borderBlue");
+//     tbName.classList.remove("borderRed");
+//     tbName.nextElementSibling.style.display = "none";
+//   } else {
+//     noErrors = false;
+//     tbName.classList.add("borderRed");
+//     tbName.classList.remove("borderBlue");
+//     tbName.nextElementSibling.style.display = "block";
+//   }
+// }
+
+// // Email RegExp
+
+// var emailRegExp = /^[\w-_\.]+@([\w-_]{2,}\.)+[a-z]{2,}$/i;
+
+// var tbEmail = document.querySelector("#tbEmail");
+// tbEmail.addEventListener("blur", checkEmail);
+
+// function checkEmail() {
+//   var check = emailRegExp.test(tbEmail.value);
+//   if(check) {
+//     tbEmail.classList.add("borderBlue");
+//     tbEmail.classList.remove("borderRed");
+//     tbEmail.nextElementSibling.style.display = "none";
+//   } else {
+//     noErrors = false;
+//     tbEmail.classList.add("borderRed");
+//     tbEmail.classList.remove("borderBlue");
+//     tbEmail.nextElementSibling.style.display = "block";
+//   }
+// }
+
+// // Message RegExp
+
+// var tbMessage = document.querySelector("#tbMessage");
+// tbMessage.addEventListener("blur", checkMessage);
+
+// function checkMessage() {
+//   var numberOfSpaces = tbMessage.value.replace(/[^\s]/mg, "").length;
+
+//   if(tbMessage.value.length - numberOfSpaces < 20) {
+//     noErrors = false;
+//     tbMessage.classList.add("borderRed");
+//     tbMessage.classList.remove("borderBlue");
+//     tbMessage.nextElementSibling.style.display = "block";
+//   } else {
+//     tbMessage.classList.add("borderBlue");
+//     tbMessage.classList.remove("borderRed");
+//     tbMessage.nextElementSibling.style.display = "none";
+//   }
+// }
+
+// // Submit button
+
+// var btnSubmitMessage = document.querySelector("#btnSubmitForm");
+
+// btnSubmitMessage.addEventListener("click", function() {
+//   noErrors = true;
+
+//   checkName();
+//   checkEmail();
+//   checkMessage();
+
+//   if(noErrors) {
+//     tbName.value = "";
+//     tbName.classList.remove("borderBlue");
+//     tbEmail.value = "";
+//     tbEmail.classList.remove("borderBlue");
+//     tbMessage.value = "";
+//     tbMessage.classList.remove("borderBlue");
+//     var successMessage = "Your message was sent successfully!";
+//     openSuccessModal(successMessage);
+//   }
+// });
+
+
+
 
 
 
@@ -252,3 +472,62 @@ $(function() {
   }); 
 });
 
+// $('.testing').addClass('importantRule');
+
+
+
+
+
+
+
+// var successModal = document.createElement("div");
+// successModal.setAttribute("id", "successModal");
+
+// var successCover = document.createElement("div");
+// successCover.setAttribute("class", "cover");
+
+// var successContainer = document.createElement("div");
+// successContainer.setAttribute("id", "successContainer");
+
+// var successMessageSpan = document.createElement("span");
+// successContainer.appendChild(successMessageSpan);
+
+// var btnClose = document.createElement("button");
+// btnClose.classList.add("font-medium", "btnClose");
+// btnClose.innerHTML = "X";
+// btnClose.addEventListener("click", closeSuccessModal);
+// successContainer.appendChild(btnClose);
+
+// successModal.appendChild(successCover);
+// successModal.appendChild(successContainer);
+
+// bodyTag.appendChild(successModal);
+
+// var closeModalTimeout;
+
+// function openSuccessModal(message) {
+//   successMessageSpan.innerHTML = message;
+//   successModal.style.display = "block";
+//   successContainer.style.display = "block";
+//   var timeoutValue = 0;
+//   for(let i = -100; i <= 0; i++) {
+//     setTimeout(function() {
+//       successCover.style.opacity = `${i+100}%`;
+//     }, timeoutValue+=1.5);
+//   }
+//   closeModalTimeout = setTimeout(closeSuccessModal, 3000);
+// }
+
+// successCover.addEventListener("click", closeSuccessModal);
+
+// function closeSuccessModal() {
+//   successContainer.style.display = "none";
+//   var timeoutValue = 0;
+//   for(let i = 0; i >= -100; i--) {
+//     setTimeout(function() {
+//       successCover.style.opacity = `${i+100}%`;
+//       if(i == -100) successModal.style.display = "none";
+//     }, timeoutValue+=1.5);
+//   }
+//   clearTimeout(closeModalTimeout);
+// }

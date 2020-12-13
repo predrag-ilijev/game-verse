@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Gameverse</title>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Gameverse</title>
-  <meta content="" name="description">
+  <meta name="author" content="Predrag Ilijev">
+  <meta content="Gameverse brings you the latest news on the PC games you love and more!" name="description">
   <meta content="" name="keywords">
 
   <link href="assets/img/favicon.png" rel="icon">
@@ -29,40 +29,18 @@
         <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid float-left"></a>
       </div>
       <button type="button" class="nav-toggle"><i class="bx bx-menu"></i></button>
-      
       <nav class="nav-menu">
         <ul id="meniLista">
         </ul>
       </nav>
     </div>
   </header><!-- End #header -->
-
+  
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
-      
       <h1>Welcome to Gameverse.</h1>
-      <h2>Please, fill out the form below to be notified for the latest gaming news!</h2>
-
-      <form action="forms/notify.php" method="post" role="form" class="php-email-form">
-        <div class="row no-gutters">
-          <div class="col-md-6 form-group pr-md-1">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-            <div class="validate"></div>
-          </div>
-          <div class="col-md-6 form-group pl-md-1">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-            <div class="validate"></div>
-          </div>
-        </div>
-
-        <div class="mb-1">
-          <div class="loading">Loading</div>
-          <div class="error-message"></div>
-          <div class="sent-message">Your notification request was sent. Thank you!</div>
-        </div>
-        <div class="text-center"><button type="submit">Notify me!</button></div>
-      </form>
+      <div class="container"><h2>Gameverse brings the latest video game news. We cover everything from PlayStation and Xbox blockbusters, to quirky Nintendo games, to the cool indie gems on PC and Android that you might otherwise miss.</h2></div>
     </div>
   </section><!-- #hero -->
 
@@ -73,7 +51,7 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-lg-6 d-flex align-items-center p-0" id="slike">
+          <div class="col-lg-6 d-flex align-items-center p-0 pl-3 pr-3" id="slike">
             <img src="assets/img/maingame.jpg" class="img-fluid prikazi" alt="maingame">
             <img src="assets/img/cyber2.jpg" class="img-fluid" alt="maingame2">
           </div>
@@ -98,9 +76,11 @@
     <section id="agames" class="agames section-bg">
       <div class="container">
         <div class="section-title">
-          <h2>Most anticipated games this month</h2>
+          <h2>Most anticipated games for 2021</h2>
         </div>
-        <div class="row" id="karticeovde"> </div>
+        <div class="row" id="karticeovde">
+
+        </div>
       </div>
     </section><!-- End Upcoming games Section -->
 
@@ -118,7 +98,9 @@
         <div class="row d-flex justify-content-center loaded"><div id="loadMore" class="btn btn-outline-light mt-4">Show more</div></div>
       </div>
     </section><!-- End News Section -->
-
+    
+    
+     
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="section-bg">
       <div class="container">
@@ -126,6 +108,7 @@
           <h2>Latest wallpapers gallery</h2>
         </div>
         <div id="slikeovde" class="row">
+          
         </div>
       </div>
     </section><!-- ======= End Gallery Section ======= -->
@@ -146,15 +129,13 @@
                 <i class="bx bx-map"></i>
                 <p>A108 Adam Street<br>New York, NY 535022</p>
               </div>
-
               <div class="email">
                 <i class="bx bx-envelope"></i>
                 <p>gameverse@gmail.com</p>
               </div>
-
               <div class="phone">
                 <i class="bx bx-phone-call"></i>
-                <p>+1 5589 55488 55s</p>
+                <p>+1 5589 55488 55</p>
               </div>
             </div>
 
@@ -165,18 +146,12 @@
               <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
 
-            <!-- <h2>Modal Example</h2> -->
-            <!-- Trigger/Open The Modal -->
+            <!-- Autor modal i dokum. -->
             <div class="d-flex justify-content-center justify-content-md-start">
               <button id="myBtn" class="btn btn-outline-light btn-sm mt-4 mr-2 ml-2 ml-md-0"><a>Author</a></button>
-
-              <!-- The Modal -->
               <div id="myModal" class="modal">
-
-                <!-- Modal content -->
                 <div class="modal-content">
                   <span class="close">&times;</span>
-                  <!-- <p>Some text in the Modal..</p> -->
                   <div class="row">
                     <div class="col-lg-4 d-flex justify-content-center p-3">
                       <img src="assets/img/mojaslika.jpeg" class="rounded" alt="profilepic">
@@ -198,16 +173,39 @@
                     </div>
                   </div>
                 </div>
-
               </div>
-
               <div class="btn btn-outline-light btn-sm mt-4"><a href="index.html">Documentation</a></div>
             </div>
           </div>
+
+
+
           
 
+          <!-- Forma -->
           <div class="col-lg-5 col-md-7">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="">
+              <p id="confirmation"></p>
+              <div class="form-group">
+                <!-- <label for="tbImePrezime">Ime i prezime</label> -->
+                <input type="text" id="tbImePrezime" placeholder="Your Name" class="form-control"/>
+                <span>Example: <i>Tom Smith, Edward Hemingway...</i></span>
+              </div>
+              <div class="form-group">
+                <!-- <label for="tbEmail">Email</label> -->
+                <input type="text" id="tbEmail" placeholder="Your Email" class="form-control"/>
+                <span>Example: <i>tom@gmail.com, tom.smith@hotmail.com, etc...</i></span>
+              </div>
+              <div class="form-group">
+                <textarea id="tbMessage" rows="5" placeholder="Message" class="form-control"></textarea>
+                <span>Enter at least 20 characters(including spaces). <i>Max: 150</i></span>
+              </div>
+              <div class="form-group">
+                <input type="button" value="Send" id="btnPrijava" class="btn btn-primary"/>
+              </div>
+              
+            </form>
+            <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validate"></div>
@@ -230,25 +228,40 @@
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+            </form> -->
           </div>
-
         </div>
-
       </div>
     </section><!-- End Contact Us Section -->
-
-
   </main><!-- End #main -->
+
+  <!-- <form action="#!" method="post">
+    <div class="form-group">
+      <label for="tbName" class="font-small">Full name</label> 
+      <input type="text" class="fontsmall" id="tbName" placeholder="Your full name" autocomplete="off"/>
+      <span class="errorMessage font-small"> <ul id="nameErrorList"> </ul> </span> 
+    </div> 
+    <div class="form-group">
+      <label for="tbEmail" class="fontsmall">Email address</label>
+      <input type="email" class="fontsmall" id="tbEmail" placeholder="Your email" autocomplete="off"/>
+      <span class="errorMessage fontsmall">examplename@example.com</span> 
+    </div> 
+    <div class="form-group">
+      <label for="tbMessage" class="font-small">Message</label>
+      <textarea class="fontsmall" id="tbMessage" placeholder="Your message" rows="10"></textarea>
+      <span class="errorMessage fontsmall">Your message (without spacing characters) cannot be shorter than 20 characters.</span>
+    </div>
+    <input type="button" id="btnSubmitForm" name="btnSubmitForm" v alue="Submit" class="font-small uppercase"/>
+  </form> -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
+      <!-- <div class="copyright">
+        &copy; Copyright <strong><span>Predrag Ilijev - 2020</span></strong>
+      </div> -->
       <div class="copyright">
-        &copy; Copyright <strong><span>Predrag Ilijev</span></strong>
-      </div>
-      <div class="credits">
-        Designed by <a href="#">Predrag Ilijev - 196/19</a>
+        &copy; Copyright - <a href="#">Predrag Ilijev - 196/19</a>
       </div>
     </div>
   </footer><!-- End #footer -->
@@ -258,13 +271,10 @@
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
   <!-- Lightbox Plugin JQuery File -->
   <script src="assets/js/jquery.lightbox.js"></script>
 
 </body>
-
 </html>
