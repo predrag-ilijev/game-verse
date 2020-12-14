@@ -86,6 +86,7 @@ document.querySelector("#slikeovde").innerHTML = ispis;
 //Kartice
 var nizIconSrc = ["assets/img/rev8.jpg", "assets/img/hinf.jpg", "assets/img/hman3.jpg"];
 var nizIconAlt = ["Icon1", "Icon2", "Icon3"];
+var nizNoviSrc = ["assets/img/rev8-1.jpg", "assets/img/hinf-1.jpg", "assets/img/hman3-1.jpg"];
 
 var clanakTekst = ["Does this game even need an introduction? The Resident Evil franchise is one of if not the longest-standing horror gaming franchises in the world. And with the return to its survival-horror roots with the enormously successful Resident Evil 7: Biohazard, the eighth installment is bound to be as jaw-dropping, if not more, right? You’re absolutely correct!",
 "If you’ve been eagerly anticipating the continuation of the Master Chief’s saga, your patience will soon be rewarded! Although the game was supposed to launch around the end of 2020, the release has been postponed to 2021. However, the anticipation for it hasn’t dwindled in the slightest! With all that in mind, eager fans can do nothing but save up and patiently wait for updates and more reveals.",
@@ -98,7 +99,7 @@ for(let i = 0; i < nizIconSrc.length; i++){
   ispis += `
     <div class="col-lg-4 col-md-12 d-flex align-items-stretch">
       <div class="card darkbg">
-        <img src="${nizIconSrc[i]}" class="card-img-top" alt="${nizIconAlt[i]}">
+        <img src="${nizIconSrc[i]}" data-alt-src="${nizNoviSrc[i]}" class="card-img-top prom" alt="${nizIconAlt[i]}">
         <div class="card-body">
           <h5 class="card-title"><a href="">${clanakNaslov[i]}</a></h5>
           <p class="card-text"> ${clanakTekst[i]} </p>
@@ -269,6 +270,17 @@ function slajder() {
   setTimeout(slajder, 5000);
 }
 
+//Promena slika hoverom
+var srcPromena = function() {
+  var $this = $(this);
+  var noviSrc = $this.data('alt-src');
+  $this.data('alt-src', $this.attr('src'));
+  $this.attr('src', noviSrc);
+}
+$(function () {
+  $('img.prom').hover(srcPromena, srcPromena);
+});
+
 //Show more dugme za vesti(Nestaje nakon sto se pojave sve vesti)
 $(function () {
   var brKl = 0;
@@ -294,9 +306,6 @@ $(function() {
     // minSize: 768
   }); 
 });
-
-
-
 
 
 
