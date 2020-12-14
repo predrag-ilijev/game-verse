@@ -44,10 +44,9 @@
       }
     }
   });
-
 })(jQuery);
 
-/// Moj deo JS-a
+/// Moj JS
 
 //Nav meni
 var nizNavHref = ["#mainnews", "#agames", "#news", "#gallery", "#contact"];
