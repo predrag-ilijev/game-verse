@@ -251,7 +251,7 @@ $(document).ready(function(){
       mistakes++;
     }
     if(mistakes == 0){
-        $("#confirmation").html("<p class='alert alert-success'>You have successfully completed the form!</p>");
+        $("#confirmation").html("<p class='alert alert-success'>You have successfully sent a message!</p>");
         $("#tbImePrezime").addClass("success").val("");
         $("#tbEmail").addClass("success").val("");
         $("#tbMessage").addClass("success").val("");
