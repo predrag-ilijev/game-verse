@@ -191,7 +191,7 @@ $(document).ready(function(){
   })
 
   $("#tbMessage").blur(function(){
-    var reMessage = /^[\w]+$/;
+    var reMessage = /^[\w\d\s\S]+$/;
     proveraRegEx(reMessage, "#tbMessage");
   })
 
@@ -237,7 +237,7 @@ $(document).ready(function(){
     
     var namePattern = /^[A-Z][a-z]{2,15}(\s[A-Z][a-z]{2,15})+$/;
     var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    var messagePattern = /^[\w]+$/;
+    var messagePattern = /^[\w\d\s\S]+$/;
 
     var mistakes = 0;
     if(!proveraRegEx(namePattern, nameField)){
