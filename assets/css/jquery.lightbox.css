@@ -9,6 +9,7 @@
     /* IE Fallback (Solid Colour) */
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIElEQVQ4T2NkYGDYDMRkA8ZRAxhGw4BhNAyA+WAYpAMAIFgLQfO9BoEAAAAASUVORK5CYII=);
     background: rgba(0, 0, 0, 0.7);
+    filter: none !important;
     -webkit-filter: none !important;
     z-index: 9997;
 }
@@ -22,19 +23,10 @@
 }
 
 body.blurred > * {
-    -webkit-filter: blur(15px);
+    filter: blur(7px);
+    -webkit-filter: blur(7px);
     /* -webkit-transform: translate3d(0, 0, 0); */
 }
-
-/* .lightbox__loading {
-    background: url(loading.gif) center center no-repeat;
-    width: 32px;
-    height: 32px;
-    margin: -16px 0 0 -16px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-} */
 
 .lightbox__caption {
     display: none;
@@ -85,12 +77,6 @@ body.blurred > * {
     transform: scale(1.4);
 }
 
-/* .lightbox__close {
-    right: 10px;
-    top: 10px;
-    background-image: url("close.png");
-} */
-
 .lightbox__nav {
     top: 50%;
     margin-top: -16px;
@@ -104,4 +90,10 @@ body.blurred > * {
 .lightbox__nav--prev {
     left: 10px;
     background-image: url("previous.png");
+} */
+
+/* .lightbox__close {
+    right: 10px;
+    top: 10px;
+    background-image: url("close.png");
 } */

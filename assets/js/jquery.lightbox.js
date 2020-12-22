@@ -1,15 +1,4 @@
-/*!
- * jquery.lightbox.js v1.4.1
- * https://github.com/duncanmcdougall/Responsive-Lightbox
- * Copyright 2020 Duncan McDougall and other contributors; @license Creative Commons Attribution 2.5
- *
- * Options: 
- * margin - int - default 50. Minimum margin around the image
- * nav - bool - default true. enable navigation
- * blur - bool - default true. Blur other content when open using css filter
- * minSize - int - default 0. Min window width or height to open lightbox. Below threshold will open image in a new tab.
- *
- */
+
 (function ($) {
 
     'use strict';
